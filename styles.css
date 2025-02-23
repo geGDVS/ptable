@@ -1,4 +1,4 @@
-/* MD3 基本样式 */
+/* MD3 风格的基本样式 */
 body {
     font-family: Roboto, sans-serif;
     background-color: #f9fafb;
@@ -82,6 +82,7 @@ h1 {
 .footer {
     font-size: 14px;
     color: #6b7280;
+    text-align: center;
 }
 
 /* 暗色模式样式 */
@@ -190,4 +191,58 @@ body.dark-mode {
 .dark-mode .progress-text-correct,
 .dark-mode .progress-text-wrong {
     color: #e5e5e5;
+}
+
+/* 手机端样式优化 */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    #question {
+        font-size: 16px;
+    }
+
+   .option {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #result {
+        font-size: 14px;
+    }
+
+   .footer {
+        font-size: 12px;
+    }
+
+   .toggle-mode {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    /* 让答题框变窄一点并与手机边框保持更大距离 */
+   .container {
+        width: 80%; /* 进一步缩小宽度 */
+        padding: 20px; /* 适当增加内边距 */
+    }
+
+    /* 进度框与手机边框保持更大距离 */
+   .progress-container {
+        width: 80%; /* 与答题框宽度一致 */
+    }
+
+    /* 一行显示两个选项 */
+   #options-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+   #options-container .option {
+        width: calc(50% - 6px); /* 每个选项宽度为 50% 减去间距 */
+        margin-bottom: 12px;
+    }
 }
