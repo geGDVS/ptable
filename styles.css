@@ -1,0 +1,193 @@
+/* MD3 基本样式 */
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 24px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+#question {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.option {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #d1d5db;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+#result {
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.footer {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* 暗色模式样式 */
+body.dark-mode {
+    background-color: #121212;
+    color: #e5e5e5;
+}
+
+.dark-mode .container {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .option {
+    background-color: #2b2b2b;
+    color: #e5e5e5;
+}
+
+.dark-mode .option:hover {
+    background-color: #383838;
+}
+
+.dark-mode .footer {
+    color: #a0a0a0;
+}
+
+.toggle-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #e5e7eb;
+    color: #1f2937;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-mode:hover {
+    background-color: #d1d5db;
+}
+
+.dark-mode .toggle-mode {
+    background-color: #2b2b2b;
+    color: #e5e5e5;
+}
+
+.dark-mode .toggle-mode:hover {
+    background-color: #383838;
+}
+
+/* 进度条样式 */
+.progress-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ddd;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    position: relative;
+    height: 30px;
+    overflow: hidden;
+}
+
+/* 答题后进度条容器背景颜色 */
+.progress-container.has-answered {
+    background-color: #ff0000;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    transition: width 0.3s ease;
+    border-radius: 6px;
+}
+
+.progress-text-correct {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    line-height: 30px;
+    color: white;
+}
+
+.progress-text-wrong {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    line-height: 30px;
+    color: white;
+}
+
+.dark-mode .progress-container {
+    background-color: #333;
+}
+
+.dark-mode .progress-container.has-answered {
+    background-color: #8b0000;
+}
+
+.dark-mode .progress-text-correct,
+.dark-mode .progress-text-wrong {
+    color: #e5e5e5;
+}
